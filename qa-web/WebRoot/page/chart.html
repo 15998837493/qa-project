@@ -1,0 +1,61 @@
+<!-- Main Chart -->
+<div class="tile" style="margin: 15px;">
+	<h2 class="tile-title">客户分布图</h2>
+	<div class="tile-config dropdown">
+		<a data-toggle="dropdown" href="" class="tile-menu"></a>
+		<ul class="dropdown-menu pull-right text-right">
+			<li><a class="tile-info-toggle" href="">图标信息</a></li>
+			<li><a >刷新</a></li>
+		</ul>
+	</div>
+	<div class="p-10">
+		<div id="line-chart" class="main-chart" style="height: 250px"></div>
+
+		<div class="chart-info" style="display: block;">
+			<ul class="list-unstyled">
+				<li class="m-b-10">客户总数 150 人 <span class="pull-right text-muted t-s-0"> <i class="fa fa-chevron-up"></i> +12%
+				</span>
+				</li>
+				<li><small>男性 70 人 <span class="pull-right text-muted t-s-0"><i class="fa m-l-15 fa-chevron-down"></i> +8%</span>
+				</small>
+					<div class="progress progress-small">
+						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
+					</div></li>
+				<li>
+					<small>女性 80 人 <span class="pull-right text-muted t-s-0"> <i class="fa m-l-15 fa-chevron-up"></i> +4%
+						</span>
+					</small>
+					<div class="progress progress-small">
+						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Pies -->
+<div class="tile text-center" style="margin: 15px;">
+	<div class="tile-dark p-10">
+		<div class="pie-chart-tiny" data-percent="14">
+			<span class="percent"></span> <span class="pie-title">&lt; 20周岁</span>
+		</div>
+		<div class="pie-chart-tiny" data-percent="36">
+			<span class="percent"></span> <span class="pie-title">20~40周岁</span>
+		</div>
+		<div class="pie-chart-tiny" data-percent="40">
+			<span class="percent"></span> <span class="pie-title">40~60周岁</span>
+		</div>
+		<div class="pie-chart-tiny" data-percent="8">
+			<span class="percent"></span> <span class="pie-title">60~80周岁</span>
+		</div>
+		<div class="pie-chart-tiny" data-percent="2">
+			<span class="percent"></span> <span class="pie-title">&gt; 80周岁</span>
+		</div>
+	</div>
+</div>
+
+<!-- Sparkline - Tiny charts -->
+<script src="common/js/easypiechart.js"></script>
+<!-- EasyPieChart - Animated Pie Charts -->
+<script src="common/js/charts.js"></script>

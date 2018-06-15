@@ -1,0 +1,20 @@
+<button class="col-xs-1 btn breadcrumb" onclick="queryExamCustomer();">返回</button>
+<h4 class="page-title">指标录入</h4>
+<hr class="whiter" />
+<!-- Table Striped -->
+<div class="row tile-dark" id="item-div" style="margin: 15px; padding: 50px;background: rgba(0,0,0,0.5);">
+	<div v-for="item in itemList">
+		<div class="col-xs-5 col-xs-offset-1" style="padding-bottom: 7px;">
+			<div class="col-xs-3"><label>{{item.itemName}} </label></div>
+			<div class="col-xs-4"><input type="text" item-value v-bind:id="item.itemCode" name="itemList" class="input-sm form-control" maxlength="5" style="width: 100px;display: inline;"/></div>
+		</div>
+	</div>
+</div>
+<div class="media text-center" style="margin-bottom: 20px;">
+	<div class="col-xs-2 col-xs-offset-4">
+		<button class="btn btn-block" onclick="saveItems('1');">生成报告</button>
+	</div>
+	<div class="col-xs-2">
+		<button class="btn btn-block" onclick="saveItems('0');">保存指标</button>
+	</div>
+</div>

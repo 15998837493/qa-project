@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<diskStore path="java.io.tmpdir" />
+
+	<defaultCache maxEntriesLocalHeap="1000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="3600" overflowToDisk="false"></defaultCache>
+
+	<!-- 登陆缓存 -->
+	<cache name="loginCache" maxElementsInMemory="10000" eternal="false" overflowToDisk="true" timeToIdleSeconds="30000" timeToLiveSeconds="60000" memoryStoreEvictionPolicy="FIFO" />
+
+	<!-- 生活方式建议缓存 -->
+	<cache name="lifeAdviceCache" maxElementsInMemory="10000" eternal="false" overflowToDisk="true" memoryStoreEvictionPolicy="FIFO" />
+
+	<!-- 指标基础信息缓存 -->
+	<cache name="itemCache" maxElementsInMemory="10000" eternal="false" overflowToDisk="true" memoryStoreEvictionPolicy="FIFO" />
+
+	<!-- 指标编码缓存 -->
+	<cache name="itemCodeCache" maxElementsInMemory="10000" eternal="false" overflowToDisk="true" memoryStoreEvictionPolicy="FIFO" />
+
+	<!-- 问卷问题及答案选项编码缓存 -->
+	<cache name="masQuestionCache" maxElementsInMemory="10000" eternal="false" overflowToDisk="true" memoryStoreEvictionPolicy="FIFO" />
+
+	<!-- 疾病指标基础配置缓存 -->
+	<cache name="diseaseItemCache" maxElementsInMemory="10000" eternal="false" overflowToDisk="true" memoryStoreEvictionPolicy="FIFO" />
+
+	<!-- 疾病选项基础配置缓存 -->
+	<cache name="diseaseOptionCache" maxElementsInMemory="10000" eternal="false" overflowToDisk="true" memoryStoreEvictionPolicy="FIFO" />
+
+	<!-- 疾病缓存 -->
+	<cache name="diseaseCache" maxElementsInMemory="10000" eternal="false" overflowToDisk="true" memoryStoreEvictionPolicy="FIFO" />
+
+</ehcache>

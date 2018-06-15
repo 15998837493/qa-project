@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="format-detection" content="telephone=no">
+<meta charset="UTF-8">
+
+<meta name="description" content="Violate Responsive Admin Template">
+<meta name="keywords" content="Super Admin, Admin, Template, Bootstrap">
+
+<title>健康管理问卷</title>
+
+<!-- CSS -->
+<link href="common/css/bootstrap.min.css" rel="stylesheet">
+<link href="common/css/animate.min.css" rel="stylesheet">
+<link href="common/css/font-awesome.min.css" rel="stylesheet">
+<link href="common/css/form.css" rel="stylesheet">
+<link href="common/css/calendar.css" rel="stylesheet">
+<link href="common/css/style.css" rel="stylesheet">
+<link href="common/css/icons.css" rel="stylesheet">
+<link href="common/css/generics.css" rel="stylesheet">
+
+</head>
+
+<body id="skin-blur-green">
+	<header id="header" class="media">
+		<a  id="menu-toggle"></a>
+		<a class="logo pull-left" >营养师</a>
+		<div class="media-body">
+			<div class="media" id="top-menu">
+				<div id="time" class="pull-right">
+					<span id="hours"></span> : <span id="min"></span> : <span id="sec"></span>
+				</div>
+				<div class="media-body">
+					<input type="text" class="main-search">
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="clearfix"></div>
+	
+	<section id="main" class="p-relative" role="main">
+		
+		<!-- Sidebar -->
+		<aside id="sidebar">
+
+			<!-- Sidbar Widgets -->
+			<div class="side-widgets overflow">
+				<!-- Profile Menu -->
+				<div class="text-center s-widget m-b-25 dropdown" id="profile-menu">
+					<a  data-toggle="dropdown"> <img class="profile-pic animated" src="common/img/profile-pic.jpg" alt="">
+					</a>
+					<ul class="dropdown-menu profile-menu">
+						<li><a >我的资料</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+						<li><a >我的消息</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+						<li><a >我的设置</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+						<li><a >退出系统</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+					</ul>
+					<h4 class="m-0">张薇</h4>
+				</div>
+
+				<!-- Calendar -->
+				<div class="s-widget m-b-25">
+					<div id="sidebar-calendar"></div>
+				</div>
+
+			</div>
+
+			<!-- Side Menu -->
+			<ul class="list-unstyled side-menu">
+				<li class="dropdown">
+					<a class="sa-side-home" href=""><span class="menu-item">健康管理</span></a>
+					<ul class="list-unstyled menu-item">
+						<li><a onclick="queryCustomer();">健康档案</a></li>
+						<li><a onclick="queryExamCustomer();">风险评估</a></li>
+						<li><a >健康干预</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="sa-side-form" href=""><span class="menu-item">统计管理</span></a>
+					<ul class="list-unstyled menu-item">
+						<li><a onclick="getChartHtml();">统计分析</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="sa-side-widget" href=""><span class="menu-item">系统管理</span></a>
+					<ul class="list-unstyled menu-item">
+						<li><a >数据字典</a></li>
+						<li><a >系统配置</a></li>
+						<li><a >人员管理</a></li>
+					</ul>
+				</li>
+			</ul>
+		</aside>
+
+		<!-- Content -->
+		<section id="content" class="container">
+			<div class="box tile-dark" style="background: rgba(0,0,0,0.5);margin: 15px;">
+				<h2 style="height: 400px;padding: 160px; text-align: center;">欢迎使用龙之葵健康管理系统</h2>
+            </div>
+		</section>
+		
+	</section>
+	
+</body>
+
+<!-- Javascript Libraries -->
+<!-- jQuery -->
+<script src="common/js/jquery.min.js"></script>
+<!-- jQuery Library -->
+<script src="common/js/jquery-ui.min.js"></script>
+<!-- jQuery UI -->
+<script src="common/js/jquery.easing.1.3.js"></script>
+
+<!-- vue.js -->
+<script src="common/plugins/vue/vue.min.js"></script>
+<!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
+
+<!-- Bootstrap -->
+<script src="common/js/bootstrap.min.js"></script>
+
+<!-- Charts -->
+<script src="common/js/charts/jquery.flot.js"></script>
+<!-- Flot Main -->
+<script src="common/js/charts/jquery.flot.time.js"></script>
+<!-- Flot sub -->
+<script src="common/js/charts/jquery.flot.animator.min.js"></script>
+<!-- Flot sub -->
+<script src="common/js/charts/jquery.flot.resize.min.js"></script>
+<!-- Flot sub - for repaint when resizing the screen -->
+
+<script src="common/js/sparkline.min.js"></script>
+<!-- Sparkline - Tiny charts -->
+<script src="common/js/easypiechart.js"></script>
+<!-- EasyPieChart - Animated Pie Charts -->
+<script src="common/js/charts.js"></script>
+<!-- All the above chart related functions -->
+
+<!-- Map -->
+<script src="common/js/maps/jvectormap.min.js"></script>
+<!-- jVectorMap main library -->
+<script src="common/js/maps/usa.js"></script>
+<!-- USA Map for jVectorMap -->
+
+<!--  Form Related -->
+<script src="common/js/icheck.js"></script>
+<!-- Custom Checkbox + Radio -->
+
+<!-- UX -->
+<script src="common/js/scroll.min.js"></script>
+<!-- Custom Scrollbar -->
+
+<!-- Other -->
+<script src="common/js/calendar.min.js"></script>
+<!-- Calendar -->
+<script src="common/js/feeds.min.js"></script>
+
+<!-- All JS functions -->
+<script src="common/js/functions.js"></script>
+
+<!-- layer插件 -->
+<script src="common/plugins/layer/layer.js"></script>
+<script src="common/plugins/layer/extend/layer.ext.js"></script>
+
+<!-- axios.js -->
+<script src="common/js/axios.min.js"></script>
+	
+<script type="text/javascript">
+var question = {currentCustomer: ""};
+function queryQuestionnaire(customer){
+	question.currentCustomer = customer;
+	// 加载问卷页面
+	$("#content").load("page/questionnaire.html");
+	// 加载问题
+	axios({ 
+		method: "get",
+	    url: "common/problems.json",
+	    responseType: "json"
+	}).then(function (response) {
+		var vm = new Vue({
+			el : "#problem_div",
+			data : {
+				problemList : response.data
+			},
+			methods: {
+				changeProblemNumber : function(){
+					$("span[number]").each(function(index, obj){
+						$(obj).html((index + 1) + "、");
+					});
+				}
+			}
+		});
+		initicheckradio();
+		vm.changeProblemNumber();
+	}).catch(function (error) {
+		console.log(error);
+	});
+}
+
+var custVm;
+function queryCustomer(){
+	$("#content").load("page/customer.html");
+	axios.post("rest/query_customer.action").then(function (response) {
+		custVm = new Vue({
+			el : "#cust_body",
+			data : {
+				customerList : response.data.value
+			},
+			methods: {
+				
+			}
+		});
+	}).catch(function (error) {
+		console.log(error);
+	});
+}
+
+function queryExamCustomer(){
+	$("#content").load("page/tables.html");
+	axios.post("rest/query_customer.action").then(function (response) {
+		new Vue({
+			el : "#cust_body",
+			data : {
+				customerList : response.data.value
+			},
+			methods: {
+				
+			}
+		});
+	}).catch(function (error) {
+		console.log(error);
+	});
+}
+
+function queryItem(customer){
+	question.currentCustomer = customer;
+	$("#content").load("page/item.html");
+	axios.post("rest/query_item.action").then(function (response) {
+		new Vue({
+			el : "#item-div",
+			data : {
+				itemList : response.data.value
+			},
+			methods: {
+				
+			}
+		});
+	}).catch(function (error) {
+		console.log(error);
+	});
+}
+
+function getProblemAnswer(type){
+	var params = {
+		"customer": {
+			"reportId": question.currentCustomer.reportId,
+			"custCode": question.currentCustomer.custCode,
+			"custName": question.currentCustomer.custName,
+			"custSex": question.currentCustomer.custSex,
+			"custBirthday": question.currentCustomer.custBirthday,
+			"custHeight": question.currentCustomer.custHeight,
+			"custWeight": question.currentCustomer.custWeight,
+			"custWaistline": 85.0,
+			"custPlevel": "st_medium",
+			"custIcard": question.currentCustomer.custIcard
+	    },
+	    "questionAnswerList": [],
+	    "examItemList": []
+	}
+	var answerArray = [];
+	$("input:radio[problem-answer], input:checkbox[problem-answer]").each(function(index, obj){
+		if($($(obj).parent()[0]).attr("aria-checked") == "true"){
+			answerArray.push({
+				"problemId": obj.name,
+				"problemOptionId": obj.value,
+				"answerContent": ""
+			});
+		}
+	});
+	$("input:text[problem-answer]").each(function(index, obj){
+		if(obj.value != null && obj.value != ""){
+			answerArray.push({
+				"problemId": obj.name,
+				"problemOptionId": $(obj).attr("optionId"),
+				"answerContent": obj.value
+			});
+		}
+	});
+	console.log(answerArray);
+	params.questionAnswerList = answerArray;
+	$.ajax({
+		type : "post",
+		url : "rest/uploadQuestionData.action",
+		contentType: 'application/json',
+		data : JSON.stringify(params),
+		async : false,
+		dataType : "json",
+		success : function(data) {
+			console.log(data);
+			if(data.resultCode != "0"){
+				alert(data.resultMessage);
+			} else{
+				if(type == "1"){
+					$.ajax({
+						type : "post",
+						url : "rest/getReport.action",
+						contentType: 'application/json',
+						data : JSON.stringify({"reportId":data.value}),
+						async : true,
+						dataType : "json",
+						success : function(path) {
+							var left = (window.screen.availWidth - 10 - 1280) / 2;
+							var height = window.screen.availHeight;
+							var sFeatures = "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,titlebar=0,width=1280,height=" + height + ",left=" + left;
+							window.open(path, new Date().getTime(), sFeatures);
+						},
+						error : function(XMLHttpRequest) {
+							console.log(XMLHttpRequest);
+						}
+					});
+				} else{
+					alert("保存成功！");
+				}
+			}
+		},
+		error : function(XMLHttpRequest) {
+			console.log(XMLHttpRequest);
+		}
+	});
+}
+
+function saveItems(type){
+	var params = {
+		"customer": {
+			"reportId": question.currentCustomer.reportId,
+			"custCode": question.currentCustomer.custCode,
+			"custName": question.currentCustomer.custName,
+			"custSex": question.currentCustomer.custSex,
+			"custBirthday": question.currentCustomer.custBirthday,
+			"custHeight": question.currentCustomer.custHeight,
+			"custWeight": question.currentCustomer.custWeight,
+			"custWaistline": 85.0,
+			"custPlevel": "st_medium",
+			"custIcard": question.currentCustomer.custIcard
+	    },
+	    "questionAnswerList": [],
+	    "examItemList": []
+	}
+	var itemArray = [];
+	$("input:text[item-value]").each(function(index, obj){
+		if(obj.value != null && obj.value != ""){
+			itemArray.push({
+				"itemCode": obj.id,
+				"itemValue": obj.value
+			});
+		}
+	});
+	console.log(itemArray);
+	params.examItemList = itemArray;
+	$.ajax({
+		type : "post",
+		url : "rest/uploadQuestionData.action",
+		contentType: 'application/json',
+		data : JSON.stringify(params),
+		async : false,
+		dataType : "json",
+		success : function(data) {
+			console.log(data);
+			if(data.resultCode != "0"){
+				alert(data.resultMessage);
+			} else{
+				if(type == "1"){
+					$.ajax({
+						type : "post",
+						url : "rest/getReport.action",
+						contentType: 'application/json',
+						data : JSON.stringify({"reportId":data.value}),
+						async : true,
+						dataType : "json",
+						success : function(path) {
+							var left = (window.screen.availWidth - 10 - 1280) / 2;
+							var height = window.screen.availHeight;
+							var sFeatures = "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,titlebar=0,width=1280,height=" + height + ",left=" + left;
+							window.open(path, new Date().getTime(), sFeatures);
+						},
+						error : function(XMLHttpRequest) {
+							console.log(XMLHttpRequest);
+						}
+					});
+				} else{
+					alert("保存成功！");
+				}
+			}
+		},
+		error : function(XMLHttpRequest) {
+			console.log(XMLHttpRequest);
+		}
+	});
+}
+
+function getReport(reportId){
+	$.ajax({
+		type : "post",
+		url : "rest/getReport.action",
+		contentType: 'application/json',
+		data : JSON.stringify({"reportId":reportId}),
+		async : true,
+		dataType : "json",
+		success : function(path) {
+			if(path instanceof Object){
+				alert(path.resultMessage);
+			} else{
+				var left = (window.screen.availWidth - 10 - 1280) / 2;
+				var height = window.screen.availHeight;
+				var sFeatures = "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,titlebar=0,width=1280,height=" + height + ",left=" + left;
+				window.open(path, new Date().getTime(), sFeatures);
+			}
+		},
+		error : function(XMLHttpRequest) {
+			console.log(XMLHttpRequest);
+		}
+	});
+}
+
+function getChartHtml(){
+	$("#content").load("page/chart.html");
+}
+
+function showAddCustomerModal(){
+	$("#custId").val("");
+	$("#custName").val("");
+	$("#custSex").val("");
+	$("#custHeight").val("");
+	$("#custWeight").val("");
+	$("#custWaistline").val("");
+	$("#custPlevel").val("");
+	$("#custBirthday").val("");
+	$("#custIcard").val("");
+	$("#custPhone").val("");
+	$("#addCustomerModal").modal("show");
+}
+
+function setUpdateCustomer(customer){
+	$("#custId").val(customer.custId);
+	$("#custName").val(customer.custName);
+	$("#custSex").val(customer.custSex);
+	$("#custHeight").val(customer.custHeight);
+	$("#custWeight").val(customer.custWeight);
+	$("#custWaistline").val("85");
+	$("#custPlevel").val("st_medium");
+	$("#custBirthday").val(customer.custBirthday);
+	$("#custIcard").val(customer.custIcard);
+	$("#custPhone").val(customer.custPhone);
+	$("#addCustomerModal").modal("show");
+}
+
+function saveCustomer(){
+	var custId = $("#custId").val();
+	var url = "";
+	var params = {
+		custId : $("#custId").val(),
+		custName : $("#custName").val(),
+		custSex : $("#custSex").val(),
+		custHeight : $("#custHeight").val(),
+		custWeight : $("#custWeight").val(),
+		custWaistline : $("#custWaistline").val(),
+		custPlevel : $("#custPlevel").val(),
+		custBirthday : $("#custBirthday").val(),
+		custIcard : $("#custIcard").val(),
+		custPhone : $("#custPhone").val()
+	};
+	if(params.custName == "" 
+			|| params.custName == "" 
+			|| params.custSex == "" 
+			|| params.custHeight == "" 
+			|| params.custWeight == "" 
+			|| params.custWaistline == "" 
+			|| params.custPlevel == "" 
+			|| params.custBirthday == "" 
+			|| params.custIcard == "" 
+			|| params.custPhone == ""){
+		alert("请完善客户所有信息！");
+		return false;
+	}
+	if(custId != undefined && custId != null && custId != ""){
+		url = "rest/update_customer.action";
+	} else{
+		url = "rest/add_customer.action";
+	}
+	axios.post(url, params).then(function (resp) {
+		axios.post("rest/query_customer.action").then(function (response) {
+			custVm.customerList = response.data.value;
+		}).catch(function (error) {
+			console.log(error);
+		});
+		$("#addCustomerModal").modal("hide");
+	}).catch(function (error) {
+		console.log(error);
+	});
+}
+
+function removeCustomer(custId){
+	axios.post("rest/remove_customer.action?custId="+custId).then(function (resp) {
+		axios.post("rest/query_customer.action").then(function (response) {
+			custVm.customerList = response.data.value;
+		}).catch(function (error) {
+			console.log(error);
+		});
+		$("#addCustomerModal").modal("hide");
+	}).catch(function (error) {
+		console.log(error);
+	});
+}
+
+</script>
+</html>

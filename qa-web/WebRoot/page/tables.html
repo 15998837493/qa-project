@@ -1,0 +1,35 @@
+<h4 class="page-title">客户列表</h4>
+<hr class="whiter" />
+<!-- Table Striped -->
+<div class="block-area" id="tableStriped">
+	<div class="table-responsive overflow">
+		<table id="cust_body" class="tile-dark table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th class="text-center" style="width: 5%">序号</th>
+					<th class="text-center" style="width: 20%">客户编码</th>
+					<th class="text-center" style="width: 15%">客户姓名</th>
+					<th class="text-center" style="width: 10%">客户性别</th>
+					<th class="text-center" style="width: 10%">客户年龄</th>
+					<th class="text-center" style="width: 20%">身份证号</th>
+					<th class="text-center" style="width: 20%">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="(customer, index) in customerList">
+					<td class="text-center">{{index+1}}</td>
+					<td class="text-center">{{customer.custCode}}</td>
+					<td>{{customer.custName}}</td>
+					<td class="text-center">{{customer.custSex == "female"?"女":"男"}}</td>
+					<td class="text-center">{{customer.custAge}}</td>
+					<td class="text-center">{{customer.custIcard}}</td>
+					<td class="text-center" style="padding: 2px;">
+						<button class="btn btn-sm" v-on:click="queryQuestionnaire(customer);">问卷答题</button>
+						<button class="btn btn-sm" v-on:click="queryItem(customer);">指标录入</button>
+						<button class="btn btn-sm" v-on:click="getReport(customer.reportId);">查看报告</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

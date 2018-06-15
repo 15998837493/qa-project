@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.mnt:mnt-core:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/com/mnt/mnt-core/1.0.0-SNAPSHOT/mnt-core-1.0.0-20170731.082559-17.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.m2/repository/com/mnt/mnt-core/1.0.0-SNAPSHOT/mnt-core-1.0.0-20170731.082559-17-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.m2/repository/com/mnt/mnt-core/1.0.0-SNAPSHOT/mnt-core-1.0.0-20170731.082559-17-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

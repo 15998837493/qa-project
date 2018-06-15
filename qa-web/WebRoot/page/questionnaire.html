@@ -1,0 +1,108 @@
+<button class="col-xs-1 btn breadcrumb" onclick="queryExamCustomer();">返回</button>
+<h4 class="page-title">健康问卷</h4>
+<hr class="whiter" />
+<!-- Main Widgets -->
+<!-- <div class="modal fade in" id="changeSkin" tabindex="-1" role="dialog" aria-hidden="false" style="display: block;">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">Change Template Skin</h4>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+		</div>
+	</div>
+</div> -->
+<div class="block-area" id="problem_div">
+	<div v-for="problem in problemList">
+		<!-- <div v-if="problem.problemIsChildren == '0'"> -->
+		<div class="row" style="display: block;">
+			<div class="col-xs-8 col-xs-offset-2">
+				<div class="tile">
+					<div class="tile-light p-10">
+						<div v-if="problem.problemType == 'radio'">
+							<h4 class="page-title">
+								<span number=""></span>{{ problem.problemContent }}
+							</h4>
+							<div class="media" style="margin-top: 15px;">
+								<div v-for="option in problem.optionList">
+									<div class="radio m-0" style="padding-left: 15px;">
+										<label class="t-overflow"> <input problem-answer type="radio" v-bind:name="problem.problemId" v-bind:value="option.problemOptionId"> {{ option.optionContent }}
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div v-if="problem.problemType == 'checkbox'">
+							<h4 class="page-title">
+								<span number=""></span>{{ problem.problemContent }}
+							</h4>
+							<div class="media" style="margin-top: 15px;">
+								<div v-for="option in problem.optionList" style="padding-left: 8px;">
+									<div class="col-xs-3">
+										<label class="t-overflow"> <input problem-answer type="checkbox" v-bind:name="problem.problemId" v-bind:value="option.problemOptionId"> {{ option.optionContent }}
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div v-if="problem.problemType == 'input'">
+							<h4 class="page-title">
+								<span number=""></span>{{ problem.problemContent.split('#')[0] }} <input problem-answer type="text" v-bind:name="problem.problemId" v-bind:optionId="problem.optionList[0].problemOptionId" class="input-sm form-control" maxlength="3" style="width: 100px;display: inline;" /> {{
+								problem.problemContent.split('#')[1] }}
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- </div> -->
+		<!-- <div v-if="problem.problemIsChildren == '1'">
+			<div v-bind:id="problem.problemId" class="row" style="display: block;">
+				<div class="col-xs-8 col-xs-offset-2">
+					<div class="tile">
+						<div class="tile-light p-10">
+							<div v-if="problem.problemType == 'radio'">
+								<h4 class="page-title"><span number=""></span>{{ problem.problemContent }}</h4>
+								<div class="media" style="margin-top: 15px;">
+									<div v-for="option in problem.optionList">
+										<div class="radio m-0" style="padding-left: 15px;">
+											<label class="t-overflow"><input type="radio" name="test">{{ option.optionContent }}</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div v-if="problem.problemType == 'checkbox'">
+								<h4 class="page-title"><span number=""></span>{{ problem.problemContent }}</h4>
+								<div class="media" style="margin-top: 15px;">
+									<div v-for="option in problem.optionList" style="padding-left: 8px;">
+										<div class="col-xs-3">
+											<label class="t-overflow"><input type="checkbox" name="test">{{ option.optionContent }}</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div v-if="problem.problemType == 'input'">
+								<h4 class="page-title">
+									<span number=""></span>{{ problem.problemContent.split('#')[0] }}
+									<input type="text" class="input-sm form-control" maxlength="7" style="width: 100px;display: inline;"/>
+									{{ problem.problemContent.split('#')[1] }}
+								</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<div class="media text-center" style="margin-bottom: 20px;">
+		<div class="col-xs-2 col-xs-offset-4">
+			<button class="btn btn-block" onclick="getProblemAnswer('1');">生成报告</button>
+		</div>
+		<div class="col-xs-2">
+			<button class="btn btn-block" onclick="getProblemAnswer('0');">保存答案</button>
+		</div>
+	</div>
+</div>
